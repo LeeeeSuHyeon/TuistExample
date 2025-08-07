@@ -9,7 +9,15 @@ let project = Project(
             product: .framework,
             bundleId: "com.tuist.feature.home",
             infoPlist: .default,
-            sources: ["Sources/**"]
+            sources: ["Sources/**"],
+            dependencies: [
+                .project(
+                    target: "Utils",
+                    path: "../../Core/Utils",
+                    status: .required,
+                    condition: nil
+                )
+            ]
         )
     ]
 )

@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Utils
 
 public class HomeViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGreen
         title = "Home Module"
+
+        print("HomeViewController - \(Utils.sayHi())")
     }
 }
