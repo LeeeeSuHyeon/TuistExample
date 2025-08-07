@@ -1,4 +1,5 @@
 import ProjectDescription
+import ProjectDescriptionHelpers
 
 let project = Project(
     name: "Home",
@@ -11,12 +12,15 @@ let project = Project(
             infoPlist: .default,
             sources: ["Sources/**"],
             dependencies: [
-                .project(
-                    target: "Utils",
-                    path: "../../Core/Utils",
-                    status: .required,
-                    condition: nil
-                )
+                // 상대 주소 설정
+//                .project(
+//                    target: "Utils",
+//                    path: "../../Core/Utils",
+//                    status: .required,
+//                    condition: nil
+//                )
+                // 절대 주소 설정
+                .utilsCore
             ]
         )
     ]

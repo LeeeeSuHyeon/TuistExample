@@ -1,4 +1,5 @@
 import ProjectDescription
+import ProjectDescriptionHelpers
 
 let project = Project(
     name: "App",
@@ -11,8 +12,13 @@ let project = Project(
             infoPlist: .default,
             sources: ["Sources/**"],
             dependencies: [
-                .project(target: "Home", path: "../Feature/Home"),
-                .project(target: "Utils", path: "../Core/Utils")
+                // 상대 주소 설정
+//                .project(target: "Home", path: "../Feature/Home"),
+//                .project(target: "Utils", path: "../Core/Utils")
+
+                // 절대 주소 설정
+                .homeFeature,
+                .utilsCore
             ]
         )
     ]
