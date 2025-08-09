@@ -7,6 +7,7 @@
 
 import UIKit
 import Utils
+import Alamofire
 
 public class HomeViewController: UIViewController {
     public override func viewDidLoad() {
@@ -15,5 +16,7 @@ public class HomeViewController: UIViewController {
         title = "Home Module"
 
         print("HomeViewController - \(Utils.sayHi())")
+
+        let count = AF.sessionConfiguration.protocolClasses?.count
     }
 }

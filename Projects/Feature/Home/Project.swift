@@ -20,7 +20,8 @@ let project = Project(
 //                    condition: nil
 //                )
                 // 절대 주소 설정
-                .utilsCore
+                .utilsCore,
+                .external(name: "Alamofire")
             ]
         )
     ]
