@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 public struct Utils {
     public static func sayHi() -> String {
