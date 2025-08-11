@@ -13,4 +13,5 @@ public enum Feature: String, ModuleNaming {
 
 public enum Core: String, ModuleNaming {
     case utils = "Utils"
+    case network = "Network"
 }

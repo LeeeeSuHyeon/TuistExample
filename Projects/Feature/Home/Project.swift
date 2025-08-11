@@ -2,13 +2,14 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project(
-    name: "Home",
+    name: Feature.home.name,
     targets: [
         .target(
-            name: "Home",
+            name: Feature.home.name,
             destinations: .iOS,
             product: .framework,
-            bundleId: "com.tuist.feature.home",
+            bundleId: "com.tuist.\(Feature.home.name)",
+            deploymentTargets: .iOS("15.0"),
             infoPlist: .default,
             sources: ["Sources/**"],
             dependencies: [
@@ -21,7 +22,7 @@ let project = Project(
 //                )
                 // 절대 주소 설정
                 .utilsCore,
-                .external(name: "Alamofire")
+                .networkCore,
             ]
         )
     ]

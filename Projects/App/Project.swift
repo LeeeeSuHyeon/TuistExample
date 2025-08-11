@@ -9,7 +9,12 @@ let project = Project(
             destinations: .iOS,
             product: .app,
             bundleId: "com.tuist.app",
-            infoPlist: .default,
+            deploymentTargets: .iOS("15.0"),
+            infoPlist: .extendingDefault(with: [
+                "NSAppTransportSecurity": [
+                    "NSAllowsArbitraryLoads": true
+                ]
+            ]),
             sources: ["Sources/**"],
             dependencies: [
                 // 상대 주소 설정
@@ -18,7 +23,8 @@ let project = Project(
 
                 // 절대 주소 설정
                 .homeFeature,
-                .utilsCore
+                .utilsCore,
+                .networkCore
             ]
         )
     ]

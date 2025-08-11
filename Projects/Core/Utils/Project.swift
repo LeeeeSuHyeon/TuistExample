@@ -1,18 +1,17 @@
 import ProjectDescription
+import ProjectDescriptionHelpers
 
-let project = Project(
-    name: "Utils",
+let utilsProject = Project(
+    name: Core.utils.name,
     targets: [
         .target(
-            name: "Utils",
+            name: Core.utils.name,
             destinations: .iOS,
             product: .framework,
-            bundleId: "com.tuist.core.utils",
+            bundleId: "com.tuist.\(Core.utils.name)",
+            deploymentTargets: .iOS("15.0"),
             infoPlist: .default,
             sources: ["Sources/**"],
-            dependencies: [
-                .external(name: "Alamofire")
-            ]
         )
     ]
 )

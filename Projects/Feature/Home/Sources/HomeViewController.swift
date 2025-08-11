@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import Utils
-import Alamofire
+import Network
 
 public class HomeViewController: UIViewController {
     public override func viewDidLoad() {
@@ -15,8 +14,16 @@ public class HomeViewController: UIViewController {
         view.backgroundColor = .systemGreen
         title = "Home Module"
 
-        print("HomeViewController - \(Utils.sayHi())")
+        let service = NetworkService()
 
-        let count = AF.sessionConfiguration.protocolClasses?.count
+        Task {
+            do {
+                let result = try await service.request("https://jsonplaceholder.typicode.com/todos/1")
+                print(result)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
+

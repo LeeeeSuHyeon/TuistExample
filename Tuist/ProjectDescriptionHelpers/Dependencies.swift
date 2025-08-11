@@ -17,6 +17,11 @@ public extension TargetDependency {
         target: Core.utils.name,
         path: .relativeToRoot(Core.utils.rootPath)
     )
+
+    static let networkCore: TargetDependency = .project(
+        target: Core.network.name,
+        path: .relativeToRoot(Core.network.rootPath)
+    )
 }
 
 /*
